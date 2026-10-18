@@ -1,6 +1,7 @@
 //! Audio analysis: transient detection, beat tracking, frequency analysis, and HPSS.
 
 pub mod beat;
+#[cfg(feature = "comparison")]
 pub mod comparison;
 pub mod frequency;
 pub mod hpss;
@@ -13,6 +14,7 @@ pub mod transient;
 pub mod waveform;
 
 pub use beat::*;
+#[cfg(feature = "comparison")]
 pub use comparison::*;
 pub use frequency::*;
 pub use key::*;

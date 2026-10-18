@@ -31,8 +31,12 @@ path = "test_audio/generate.rs"
 name = "stage16_audition"
 
 [features]
+default = ["comparison"]
 cli = []
 qa-harnesses = []
+# `analysis::comparison`. Its cross-correlation plans an f64 FFT, which compiles all of rustfft a
+# second time beside the f32 one the engine uses. A crate that never compares can turn it off.
+comparison = []
 
 [dev-dependencies]
 toml = "0.8"
